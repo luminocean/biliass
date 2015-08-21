@@ -15,7 +15,18 @@ Style: Danmaku2ASS_5e8b, MS PGothic, <%=config.fontSize%>, &H33FFFFFF, &H33FFFFF
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 <% danmakuItems.forEach(function(item){ %><%
+
 %>Dialogue: 2,<%=item.startTime.hour%>:<%=item.startTime.minute%>:<%=item.startTime.second%>.<%=item.startTime.millisecond%>,<%=item.endTime.hour%>:<%=item.endTime.minute%>:<%=item.endTime.second%>.<%=item.endTime.millisecond%>,<%
+
 %>Danmaku2ASS_5e8b,,0000,0000,0000,,<%
-%>{\move(<%=config.width%>, <%=item.yPos%>, -96, <%=item.yPos%>)}<%=item.text%>
-<% });%>
+
+%><% if(item.type === 'float'){ %>{\move(<%=config.width%>, <%=item.yPos%>, -96, <%=item.yPos%>)}<%=item.text%>
+<%   } %><%
+
+%><% if(item.type === 'bottom'){ %>{\an2\pos(<%=config.width/2%>, <%=item.yPos%>)\c&H0200E9&}<%=item.text%>
+<%   } %><%
+
+%><% if(item.type === 'top'){ %>{\an8\pos(<%=config.width/2%>, <%=item.yPos%>)\c&H0200E9&}<%=item.text%>
+<%   } %><%
+
+%><% }); %>
