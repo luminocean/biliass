@@ -1,1 +1,39 @@
 #! /usr/bin/env node
+
+var biliass = require('../lib/biliass');
+var command = require('commander');
+
+command
+  .version('1.0.0')
+  .option('-u, --url [url]', 'The url of the video page')
+  .option('-d, --dir [directory]', 'The directory to which the ass subtitle will be saved (absolute or relative). '
+      +'Default to the current execution directory.')
+  .option('-n, --nth [page_number]', 'The number of the subpage you want to download the subtitle from.'
+    +'(In the case where one video page has multiple subpages) '
+    +'Default to 1')
+  .parse(process.argv);
+
+var pageUrl = command['url'];
+var saveDir = command['dir'];
+var pageNumber = command['nth'];
+
+if( !pageUrl ) exitWithError('请输入页面视频url');
+
+// 保存路径默认为当前执行目录
+saveDir = saveDir || '.';
+pageNumber = pageNumber || 1;
+
+biliass.downloadAss(pageUrl, pageNumber, saveDir, function(err){
+  if(err) return console.error(err);
+
+  console.log('字幕下载完成');
+});
+
+/**
+ * 错误退出函数
+ * @param  {string} msg 错误信息
+ */
+function exitWithError(msg){
+  console.error(msg);
+  process.exit(1);
+}

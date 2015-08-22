@@ -10,7 +10,7 @@ YCbCr Matrix: TV.601
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Danmaku2ASS_5e8b, MS PGothic, <%=config.fontSize%>, &H33FFFFFF, &H33FFFFFF, &H33000000, &H33000000, 0, 0, 0, 0, 100, 100, 0.00, 0.00, 1, 2, 0, 7, 0, 0, 0, 0
+Style: Biliass_basic_font, MS PGothic, <%=config.fontSize%>, &H33FFFFFF, &H33FFFFFF, &H33000000, &H33000000, 0, 0, 0, 0, 100, 100, 0.00, 0.00, 1, 2, 0, 7, 0, 0, 0, 0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -18,15 +18,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 %>Dialogue: 2,<%=item.startTime.hour%>:<%=item.startTime.minute%>:<%=item.startTime.second%>.<%=item.startTime.millisecond%>,<%=item.endTime.hour%>:<%=item.endTime.minute%>:<%=item.endTime.second%>.<%=item.endTime.millisecond%>,<%
 
-%>Danmaku2ASS_5e8b,,0000,0000,0000,,<%
+%>Biliass_basic_font,,0000,0000,0000,,<%
 
-%><% if(item.type === 'float'){ %>{\move(<%=config.width%>, <%=item.yPos%>, -96, <%=item.yPos%>)}<%=item.text%>
+%><% if(item.type === 'float'){ %>{\move(<%=config.width%>, <%=item.yPos%>, -96, <%=item.yPos%>)\c&H<%=item.color%>&}<%=item.text%>
 <%   } %><%
 
-%><% if(item.type === 'bottom'){ %>{\an2\pos(<%=config.width/2%>, <%=item.yPos%>)\c&H0200E9&}<%=item.text%>
+%><% if(item.type === 'bottom'){ %>{\an2\pos(<%=config.width/2%>, <%=item.yPos%>)\c&H<%=item.color%>&}<%=item.text%>
 <%   } %><%
 
-%><% if(item.type === 'top'){ %>{\an8\pos(<%=config.width/2%>, <%=item.yPos%>)\c&H0200E9&}<%=item.text%>
+%><% if(item.type === 'top'){ %>{\an8\pos(<%=config.width/2%>, <%=item.yPos%>)\c&<%=item.color%>&}<%=item.text%>
 <%   } %><%
 
 %><% }); %>
