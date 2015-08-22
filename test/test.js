@@ -2,7 +2,8 @@
 
 var biliass = require('../lib/biliass');
 
-biliass.downloadAss('http://www.bilibili.com/video/av903236/',function(err, result){
+biliass.downloadAss('http://www.bilibili.com/video/av903236/',
+  1, 'downloads', function(err, result){
   if(err) return console.error(err);
 
   //console.log(result);
