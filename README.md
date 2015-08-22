@@ -25,4 +25,4 @@ Usage: biliass [options]
 示例：
 bin/biliass -d ./subtitles -n 2 -u http://www.bilibili.com/video/av2474781/
 
-这行命令将下载该页面的第二个视频到当前目录下的subtitles文件夹下
+这行命令将下载该页面的第二个字幕文件到当前目录下的subtitles文件夹下
