@@ -20,7 +20,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 %>Biliass_basic_font,,0000,0000,0000,,<%
 
-%><% if(item.type === 'float'){ %>{\move(<%=config.width%>, <%=item.yPos%>, -96, <%=item.yPos%>)\c&H<%=item.color%>&}<%=item.text%>
+%><% if(item.type === 'float'){ %>{\move(<%=config.width%>, <%=item.yPos%>, -<%=item.length%>, <%=item.yPos%>)\c&H<%=item.color%>&}<%=item.text%>
 <%   } %><%
 
 %><% if(item.type === 'bottom'){ %>{\an2\pos(<%=config.width/2%>, <%=item.yPos%>)\c&H<%=item.color%>&}<%=item.text%>
