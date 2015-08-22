@@ -2,7 +2,8 @@
   "name": "biliass",
   "version": "1.0.0",
   "description": "",
-  "main": "biliass.js",
+  "bin":"bin/biliass",
+  "main": "lib/biliass.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
