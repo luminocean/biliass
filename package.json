@@ -1,6 +1,6 @@
 {
   "name": "biliass",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "ASS subtitle downloader for Bilibili",
   "bin": "bin/biliass",
   "main": "lib/biliass.js",
