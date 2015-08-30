@@ -1,6 +1,6 @@
 # Biliass
 
-ASS Subtitle Tool for Bilibili
+ASS subtitle downloader for Bilibili
 
 Bilibili的ASS字幕生成工具
 Biliass可以根据B站某视频的地址获取xml格式字幕，然后转换成ass格式的字幕。
