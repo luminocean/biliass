@@ -26,3 +26,13 @@ Usage: biliass [options]
 bin/biliass -d ./subtitles -n 2 -u http://www.bilibili.com/video/av2474781/
 
 这行命令将把该视频part 2的弹幕的ass格式下载到当前目录下的subtitles文件夹下
+
+biliass同样可作为node模块使用，参考bin/biliass
+
+### 安装
+
+首先确认安装了Node.js与npm工具，参考 https://nodejs.org 与 https://www.npmjs.com
+
+git clone以后，在项目目录下执行`npm install`安装依赖后即可使用
+
+在项目目录下执行 sudo npm install -g . 可以把biliass安装到全局，从而可以在命令行中直接使用biliass运行
